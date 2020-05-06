@@ -1,0 +1,6 @@
+# cache python odoo
+models/_pycache_/
+wizards/_pycache_/
+reports/_pycache_/
+# cache python pycharm
+.idea/
