@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="buka_lantai" model="ir.actions.act_window">
+        <field name="name">Lantai</field>
+        <field name="res_model">bangunan.lantai</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('bangunan_id', '=', active_id)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="bangunana_form" model="ir.ui.view">
+        <field name="name">bangunan.bangunan.form</field>
+        <field name="model">bangunan.bangunan</field>
+        <field name="arch" type="xml">
+            <form string="area">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                         <button name="%(buka_lantai)d" type="action" class="oe_stat_button" icon="fa-list-ul">
+                            <field name="lantai_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="kode" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="area_id"/>
+                            <field name="zona_id"/>
+                            <field name="jenis_bangunan"/>
+                            <field name="nomer_imb"/>
+                            <field name="alamat"/>
+                        </group>
+                        <group>
+                            <field name="kode" />
+                            <field name="name"/>
+                            <field name="sertifikat"/>
+                            <field name="nomer_sertifikat"/>
+                            <field name="keterangan"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bangunan_tree" model="ir.ui.view">
+        <field name="name">bangunan.bangunan.tree</field>
+        <field name="model">bangunan.bangunan</field>
+        <field name="arch" type="xml">
+           <tree string="bangunan">
+               <field name="area_id"/>
+               <field name="zona_id"/>
+               <field name="kode"/>
+               <field name="name"/>
+               <field name="alamat"/>
+               <field name="nomer_imb"/>
+               <field name="sertifikat"/>
+               <field name="keterangan"/>
+           </tree>
+        </field>
+    </record>
+
+    <record id="action_bangunan" model="ir.actions.act_window">
+        <field name="name">Bangunan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bangunan.bangunan</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hasil Tidak Ada
+            </p>
+        </field>
+    </record>
+
+</odoo>

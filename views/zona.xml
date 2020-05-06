@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="zona_form" model="ir.ui.view">
+        <field name="name">bangunan.zona.form</field>
+        <field name="model">bangunan.zona</field>
+        <field name="arch" type="xml">
+            <form string="area">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="kode" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="kode" />
+                            <field name="nama"/>
+                        </group>
+                        <group>
+                            <field name="area_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="zona_tree" model="ir.ui.view">
+        <field name="name">bangunan.zona.tree</field>
+        <field name="model">bangunan.zona</field>
+        <field name="arch" type="xml">
+           <tree string="area">
+               <field name="kode"/>
+               <field name="area_id"/>
+               <field name="nama"/>
+           </tree>
+        </field>
+    </record>
+
+    <record id="action_zona" model="ir.actions.act_window">
+        <field name="name">Zona</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bangunan.zona</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hasil Tidak Ada
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bangunan_area,access.bangunan.area,model_bangunan_area,,1,1,1,1
+access_bangunan_zona,access.bangunan.zona,model_bangunan_zona,,1,1,1,1
+access_bangunan_bangunan,access.bangunan.bangunan,model_bangunan_bangunan,,1,1,1,1
+access_bangunan_lantai,access.bangunan.lantai,model_bangunan_lantai,,1,1,1,1
+access_bangunan_ruang,access.bangunan.ruang,model_bangunan_ruang,,1,1,1,1

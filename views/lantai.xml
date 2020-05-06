@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="buka_ruang" model="ir.actions.act_window">
+        <field name="name">Lantai</field>
+        <field name="res_model">bangunan.ruang</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('lantai_id', '=', active_id)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="lantai_form" model="ir.ui.view">
+        <field name="name">bangunan.lantai.form</field>
+        <field name="model">bangunan.lantai</field>
+        <field name="arch" type="xml">
+            <form string="area">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                         <button name="%(buka_ruang)d" type="action" class="oe_stat_button" icon="fa-th-large">
+                            <field name="ruang_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="kode" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                             <field name="kode"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="bangunan_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="lantai_tree" model="ir.ui.view">
+        <field name="name">bangunan.lantai.tree</field>
+        <field name="model">bangunan.lantai</field>
+        <field name="arch" type="xml">
+           <tree string="area">
+               <field name="kode"/>
+               <field name="bangunan_id"/>
+               <field name="name"/>
+           </tree>
+        </field>
+    </record>
+
+    <record id="action_lantai" model="ir.actions.act_window">
+        <field name="name">Lantai</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bangunan.lantai</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Hasil Tidak Ada
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="Bangunan_id" name=" Aset Bangunan" />
+    <menuitem id="bangunan_bangunan" name="Bangunan" parent="Bangunan_id" action="action_bangunan" />
+    <menuitem id="bangunan_lantai" name="Lantai" parent="Bangunan_id" action="action_lantai" />
+    <menuitem id="bangunan_ruang" name="Ruang" parent="Bangunan_id" action="action_ruang" />
+    <menuitem id="bangunan_area" name="Area" parent="Bangunan_id" action="action_area" />
+    <menuitem id="bangunan_zona" name="Zona" parent="Bangunan_id" action="action_zona" />
+</odoo>
