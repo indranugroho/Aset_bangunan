@@ -6,7 +6,7 @@ class Ruang(models.Model):
     _description = 'bangunan ruang'
     _rec_name = 'name'
 
-    kode=fields.Char(string='Kode',track_visibility='always')
+    kode=fields.Char(string='Kode', track_visibility='always')
     name=fields.Char(string='Nama Ruangan', required=True)
     bangunan_id=fields.Many2one('bangunan.bangunan', string='Bangunan')
     lantai_id = fields.Many2one('bangunan.lantai', string='Lantai')
@@ -22,8 +22,3 @@ class Ruang(models.Model):
         for rec in self:
             return {'domain': {'lantai_id': [('bangunan_id', '=', rec.bangunan_id.id)]}}
 
-    # @api.model
-    # def create(self, vals):
-    #     if vals.get('kode', ('New')) == ('New'):
-    #         vals['kode'] = self.env['ir.sequence'].next_by_code('bangunan.ruang.sequence') or ('New')
-    #     return super(Ruang, self).create(vals)

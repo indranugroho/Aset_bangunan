@@ -22,8 +22,3 @@ class Lantai(models.Model):
         count = self.env['bangunan.ruang'].search_count([('lantai_id', '=', self.id)])
         self.ruang_count = count
 
-    # @api.model
-    # def create(self, vals):
-    #     if vals.get('kode', ('New')) == ('New'):
-    #         vals['kode'] = self.env['ir.sequence'].next_by_code('bangunan.lantai.sequence') or ('New')
-    #     return super(Lantai, self).create(vals)
